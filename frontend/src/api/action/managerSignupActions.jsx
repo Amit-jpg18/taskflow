@@ -6,7 +6,7 @@ export const managerSignup = createAsyncThunk(
   async (formData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/manager/signup",
+        "https://taskflow-q7zy.onrender.com/manager/signup",
         formData
       );
 

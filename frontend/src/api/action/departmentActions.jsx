@@ -7,7 +7,7 @@ export const fetchDepartmentsRoles = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const res = await axios.get(
-        "http://localhost:5000/api/departments-roles"
+        "https://taskflow-q7zy.onrender.com/api/departments-roles"
       );
       return res.data;
     } catch (err) {
@@ -22,7 +22,7 @@ export const addDepartment = createAsyncThunk(
   async (data, { rejectWithValue }) => {
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/departments",
+        "https://taskflow-q7zy.onrender.com/api/departments",
         data
       );
       return res.data;

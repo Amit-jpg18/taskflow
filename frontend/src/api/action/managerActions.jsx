@@ -3,7 +3,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const API = "http://localhost:5000";
+const API = "https://taskflow-q7zy.onrender.com";
 
 axios.defaults.withCredentials = true;
 

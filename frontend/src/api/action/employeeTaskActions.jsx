@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://taskflow-q7zy.onrender.com";
 
 // 🔹 1. Fetch Employee Tasks
 export const fetchEmployeeTasks = createAsyncThunk(
