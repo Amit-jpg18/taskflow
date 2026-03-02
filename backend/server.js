@@ -14,14 +14,15 @@ const app = express();
 app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+const cors = require("cors");
 
-
-app.use(
-  cors({
-    origin: "http://localhost:5173", 
-    credentials: true,              
-  })
-);
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://frontend-taskflow.onrender.com"
+  ],
+  credentials: true
+}));
 
 app.post("/manager/signup", upload.single("profilePicture"), registerManager);
 app.put("/manager/update", verifyAuth ,upload.single("profilePicture"), updateManagerController );
