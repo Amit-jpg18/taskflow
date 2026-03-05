@@ -11,7 +11,7 @@ const EmployeeNavbar = ({ employeeName }) => {
   const handleLogout = async () => {
     try {
       await axios.post(
-        "https://taskflow-q7zy.onrender.com/manager/logout",
+        "http://localhost:5000/manager/logout",
         {},
         { withCredentials: true }
       );

@@ -19,7 +19,7 @@ function Login() {
     setLoading(true);
 
     try {
-      const response = await axios.post("https://taskflow-q7zy.onrender.com/manager/login", data);
+      const response = await axios.post(" http://localhost:5000/manager/login", data);
 
       // Save token in cookies
       Cookies.set("token", response.data.token, { expires: 1 });

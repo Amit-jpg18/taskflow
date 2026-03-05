@@ -1,20 +1,21 @@
-
 import mysql from "mysql2";
 import dotenv from "dotenv";
 
-dotenv.config();
 
-const pool = mysql.createPool({
+dotenv.config({ path: "./database/.env" });
+const db = mysql.createConnection({
   host: process.env.DB_HOST,
   user: process.env.DB_USER,
-  password: process.env.DB_PASS,
+  password: process.env.DB_PASS, 
   database: process.env.DB_NAME,
-  waitForConnections: true,
-  connectionLimit: 10,
-  queueLimit: 0,
-  ssl: process.env.DB_SSL === "true"
-    ? { rejectUnauthorized: false }
-    : undefined,
 });
 
-export default pool.promise();
+db.connect((err) => {
+  if (err) {
+    console.error("Database connection failed:", err);
+  } else {
+    console.log("Connected to MySQL database!");
+  }
+});
+
+export default db.promise();

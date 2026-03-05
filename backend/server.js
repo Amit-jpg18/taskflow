@@ -19,7 +19,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://frontend-taskflow.onrender.com"
   ],
   credentials: true
 }));
